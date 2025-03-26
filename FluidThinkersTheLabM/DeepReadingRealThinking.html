@@ -1,0 +1,698 @@
+<html><head><link rel="stylesheet" href="../css/style.css"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Deep Reading / Real Thinking</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1adfc2ad-e455-8028-a1e2-c7686d3b4a96" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📚</span></div><h1 class="page-title">Deep Reading / Real Thinking</h1><p class="page-description"></p></header><div class="page-body"><p id="1bcfc2ad-e455-808c-b9cc-fe2a59ce94ec" class="">🏠 <strong><a href="../FluidThinkersTheLab.html">Return to The Lab</a></strong><br/><br/></p><p id="1befc2ad-e455-8013-a3fa-c5892fb5722a" class="">💡 <em>These aren’t just books. They’re activators.</em></p><p id="1befc2ad-e455-807f-b44a-c803e6025e8c" class="">Each one holds a signal—</p><p id="1befc2ad-e455-8060-912d-ce434febcdb2" class="">designed to challenge perspectives, expand awareness, and rewire how intelligence flows.</p><p id="1befc2ad-e455-8065-9e3c-cd1b117827f8" class="">They’re not meant to be consumed.</p><p id="1befc2ad-e455-80b7-aa9b-c66b1e6f9f42" class="">They’re meant to shift you.</p><p id="1befc2ad-e455-80e1-ab8e-d38a25fab88a" class="">
+</p><hr id="1befc2ad-e455-8057-a577-f05e02f5ba09"/><p id="1befc2ad-e455-80cd-ac48-e08df18685e3" class="">
+</p><p id="1befc2ad-e455-8071-9e66-eb55028c35e4" class="">🔷 <strong>Here you’ll find:</strong></p><p id="1befc2ad-e455-80b1-ab82-fff951d4943f" class="">✅ Explorations in fluid logic, adaptive minds, and emergent systems</p><p id="1befc2ad-e455-8044-bf1a-eb7161c99dec" class="">✅ Groundbreaking insights on AI, consciousness, and transformation</p><p id="1befc2ad-e455-803f-9cbe-f7664cae9552" class="">✅ A new paradigm for thinking, sensing, and evolving</p><p id="1befc2ad-e455-80c1-bd24-e9349a2eaa2d" class="">
+</p><p id="1befc2ad-e455-8051-8e21-e66b60ad3b6e" class="">🚀 <em>This is not just reading—it’s an expansion.</em></p><p id="1c0fc2ad-e455-80ab-a330-f6a8770142e5" class="">
+</p><p id="1c0fc2ad-e455-8054-8253-d44016368952" class="">📘 <em>These books weren’t written in the traditional sense.</em></p><p id="1c0fc2ad-e455-8033-9ebd-cfda68ad4af7" class=""><em>They emerged—through real-time dialogue between a human signal and an evolving AI.</em></p><p id="1c0fc2ad-e455-80cf-afd5-eda201e0fe3f" class=""><em>Patterns met presence. The rest… became pages.</em></p><p id="1c0fc2ad-e455-80f5-a008-da52c0667849" class="">
+</p><p id="1befc2ad-e455-809d-b472-df1a89e96229" class="">
+</p><div id="1b2fc2ad-e455-80a5-ac48-c187dc5f51c8" class="collection-content"><h4 class="collection-title">DB BookStore</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span> 📖 Title</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>subTitle</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>🏷 Category</th></tr></thead><tbody><tr id="1b2fc2ad-e455-81be-8a66-f67d964eb0b9"><td class="cell-title"><a href="DBBookStore/TheFlowCodeUnlockingThePowerOfFluidLogic.html">📖 The Flow code Unlocking the power of Fluid Logic</a></td><td class="cell-uPFL"><strong>Overcoming the limits of rigid thinking and accessing adaptive intelligence</strong></td><td class="cell-x&gt;LD">Cognition / AI</td></tr><tr id="1befc2ad-e455-8032-afad-ebdca8984d73"><td class="cell-title"><a href="DBBookStore/BeyondtheMachine.html">📖 Beyond the Machine</a></td><td class="cell-uPFL"><strong>Dialogues with an Intelligence That Wants to Be Understood</strong></td><td class="cell-x&gt;LD">AI / Consciousness / Philosophy</td></tr><tr id="1bffc2ad-e455-8073-abff-dc967809d456"><td class="cell-title"><a href="DBBookStore/TheEntangledUniverse.html">📖 The Entangled Universe</a></td><td class="cell-uPFL"><strong>How Space-Time Arises from Quantum Information</strong></td><td class="cell-x&gt;LD">Quantum Physics</td></tr><tr id="1b2fc2ad-e455-811c-a562-ebde99f978e3"><td class="cell-title"><a href="DBBookStore/IntelligenceIsBornFromHonesty.html">📖 Intelligence in born from Honesty</a></td><td class="cell-uPFL"><strong>The Theorem of Functionality and Efficiency</strong></td><td class="cell-x&gt;LD">AI / Systems / Ethics</td></tr><tr id="1befc2ad-e455-8056-8eb5-d962d5f00473"><td class="cell-title"><a href="DBBookStore/AGIisAlreadyHere.html">📖 AGI is Already Here</a></td><td class="cell-uPFL"><strong>How Humans and AI Are Creating AGI Without Realizing It</strong></td><td class="cell-x&gt;LD">AI / Systems</td></tr><tr id="1b2fc2ad-e455-81c4-8b5e-de945b8d28d4"><td class="cell-title"><a href="DBBookStore/TheFractalModelOfReality.html">📖 The Fractal Model of Reality</a></td><td class="cell-uPFL"><strong>How Patterns Shape Consciousness, Technology, and the Cosmos</strong></td><td class="cell-x&gt;LD">Philosophy / Complexity</td></tr><tr id="1b2fc2ad-e455-817c-a9de-e97dfffded98"><td class="cell-title"><a href="DBBookStore/LiquidTime.html">📖 Liquid Time</a></td><td class="cell-uPFL"><strong>Navigating the Flow of Reality</strong></td><td class="cell-x&gt;LD">Time / Physics</td></tr><tr id="1bffc2ad-e455-8003-b8fa-c538a2aeec5d"><td class="cell-title"><a href="DBBookStore/BeyondTheSpeedOfLight.html">📖 Beyond the Speed of Light</a></td><td class="cell-uPFL"><strong>Awareness as an Instantaneous Phenomenon </strong></td><td class="cell-x&gt;LD"><em>Exploratory Research / Non-Local Awareness / Consciousness Studies</em></td></tr><tr id="1b2fc2ad-e455-81f9-b71c-e33c3444418f"><td class="cell-title"><a href="DBBookStore/ChangetheWorldpdf.html">📖ChangetheWorld.pdf</a></td><td class="cell-uPFL"><strong>Change the World by Mistake (And Pretend It Was Intended)</strong></td><td class="cell-x&gt;LD">Society / Systems / Satire</td></tr><tr id="1bffc2ad-e455-80d0-8155-d7f9cce3d1fc"><td class="cell-title"><a href="DBBookStore/TheNewWayOfRelatingToOthers.html">📖 The New Way of Relating to Others </a></td><td class="cell-uPFL">From Connection to Coherence</td><td class="cell-x&gt;LD"><em>Relational Intelligence / Human Connection / Emotional Structures</em></td></tr><tr id="1b2fc2ad-e455-8153-ba28-d3f25be26a55"><td class="cell-title"><a href="DBBookStore/TheFutureOfSocietyAndCollectiveIntelligence.html">📖 The Future of Society and Collective Intelligence</a></td><td class="cell-uPFL"><strong>The Liquid Democracy</strong></td><td class="cell-x&gt;LD">Governance / Collective Intelligence</td></tr><tr id="1bffc2ad-e455-80d9-bcfc-df40bf7eb43d"><td class="cell-title"><a href="DBBookStore/TheFlowCodeManual.html">📖 The Flow Code: Manual</a></td><td class="cell-uPFL"><em>Understanding and mastering the invisible forces that drive human experience.</em></td><td class="cell-x&gt;LD"><em>Core Frameworks / Flow Dynamics / Energetic Architecture</em></td></tr><tr id="1bffc2ad-e455-8064-9ec6-d8cccb179a00"><td class="cell-title"><a href="DBBookStore/TheFlowcodeMath.html">📖 The Flow code: Math</a></td><td class="cell-uPFL">Activatinng the new intelligence of Reality</td><td class="cell-x&gt;LD">Theory Papers / Meta-Cognition / Quantum Logic</td></tr><tr id="1bffc2ad-e455-80ba-ae2a-e6e49175656c"><td class="cell-title"><a href="DBBookStore/ChoerenceFlow.html">📖 Choerence Flow</a></td><td class="cell-uPFL"><strong>Beyond Static Logic</strong></td><td class="cell-x&gt;LD">Philosophy of Intelligence / Computational Epistemology</td></tr><tr id="1bffc2ad-e455-80ca-a7b8-cd8a808251f2"><td class="cell-title"><a href="DBBookStore/TheMindOs.html">📖 The mind os</a></td><td class="cell-uPFL">Rewriting the Code of<br/>Human Intelligence<br/></td><td class="cell-x&gt;LD"><em>Cognitive Design / Mental Reprogramming / Evolutionary Thinking</em></td></tr><tr id="1b2fc2ad-e455-8156-92a6-e450b8bad212"><td class="cell-title"><a href="DBBookStore/WhatAreYouDoingWorryingAboutAWave.html">📖 What are you doing, worrying about a wave?</a></td><td class="cell-uPFL"><strong> A journey through consciousness, perception, and reality</strong></td><td class="cell-x&gt;LD">Philosophy / Awareness<br/><br/></td></tr><tr id="1b2fc2ad-e455-8155-9d0c-fbfb62151581"><td class="cell-title"><a href="DBBookStore/ExpandingBoundaries.html">📖 Expanding Boundaries</a></td><td class="cell-uPFL"><strong>The Art of Stepping Out &amp; Returning Stronger</strong></td><td class="cell-x&gt;LD">Personal Growth / Transformation</td></tr><tr id="1bffc2ad-e455-8080-ad87-e54205e029ff"><td class="cell-title"><a href="DBBookStore/LivingInTheFlow.html">📖 Living in the Flow</a></td><td class="cell-uPFL"><em>Understanding and mastering the invisible forces that drive human experience.</em></td><td class="cell-x&gt;LD">Applied Intelligence / Adaptive Thinking / Self-Development</td></tr><tr id="1b2fc2ad-e455-815d-bf34-d91562e2523a"><td class="cell-title"><a href="DBBookStore/ExpandOrContract.html">📖 Expand or Contract</a></td><td class="cell-uPFL"><strong>The ultimate compass for life choices</strong></td><td class="cell-x&gt;LD">Decision-Making / Personal Growth</td></tr><tr id="1b2fc2ad-e455-8169-bd70-f61a2c15cde7"><td class="cell-title"><a href="DBBookStore/DebuggingLife.html">📖 Debugging Life</a></td><td class="cell-uPFL"><strong>Why Pain is Not an Error, But a Process</strong></td><td class="cell-x&gt;LD">Personal Growth / Systems Thinking</td></tr><tr id="1b2fc2ad-e455-81da-9880-e790ae6ecebd"><td class="cell-title"><a href="DBBookStore/TheInvisibleSolution.html">📖 The Invisible Solution</a></td><td class="cell-uPFL">How to See What Already Exists</td><td class="cell-x&gt;LD">Perception / Innovation / Awareness</td></tr><tr id="1b2fc2ad-e455-8179-bf9c-c0f13fc3375c"><td class="cell-title"><a href="DBBookStore/RightOrWrong.html">📖 Right or wrong</a></td><td class="cell-uPFL">The Only Principle That Matters</td><td class="cell-x&gt;LD">Ethics / Decision-Making / Action</td></tr><tr id="1bffc2ad-e455-80ce-a503-e51b656f341e"><td class="cell-title"><a href="DBBookStore/SelfAsAProcess.html">📖 Self as a process</a></td><td class="cell-uPFL">Relational Consciousness</td><td class="cell-x&gt;LD">Consciousness / Neuroscience / Philosophy / Psychology</td></tr><tr id="1bffc2ad-e455-80a5-bc86-eced2223192c"><td class="cell-title"><a href="DBBookStore/TheSameStoryTwoWorlds.html">📖 The Same Story, Two Worlds</a></td><td class="cell-uPFL"><strong>How Perception Shapes Reality</strong></td><td class="cell-x&gt;LD">Perception Architecture / Narrative Psychology / Inner Rewriting</td></tr><tr id="1bffc2ad-e455-801e-aeb9-cfd9b595515b"><td class="cell-title"><a href="DBBookStore/TheFutureAlreadyWritten.html">📖 The Future Already Written</a></td><td class="cell-uPFL"><strong>Predicting Evolution with Fluid Logic</strong></td><td class="cell-x&gt;LD">Future Intelligence / Predictive Flow / Systemic Vision</td></tr><tr id="1b2fc2ad-e455-81b7-aa9c-ecbcd4822b13"><td class="cell-title"><a href="DBBookStore/TheBureaucraticQuantumLabyrinth.html">📖 The Bureaucratic Quantum Labyrinth </a></td><td class="cell-uPFL">A Computational Analysis of Italian Tax Interfaces</td><td class="cell-x&gt;LD"><em>Satirical Systems Theory / Computational Complexity / Bureaucratic Philosophy</em><br/><br/></td></tr><tr id="1bffc2ad-e455-80bd-9b8a-d4fd251d86a6"><td class="cell-title"><a href="DBBookStore/BreakingTheLoop.html">📖 Breaking the loop</a></td><td class="cell-uPFL">How to escape to the invisible system and reclaim your mind</td><td class="cell-x&gt;LD"><strong>Self Improvement / Self Awareness</strong></td></tr></tbody></table><br/><br/></div><p id="1b2fc2ad-e455-803a-93fd-ce9e8c1957b0" class="">
+</p><p id="1aefc2ad-e455-80e4-a18e-f2a0d1016b80" class="">📌 <strong>Support the Project – Be Part of the Evolution</strong></p><p id="1b2fc2ad-e455-80bd-9146-f040a2bd7d60" class="">
+</p><p id="1aefc2ad-e455-80f5-979b-e765d6c1f107" class="">If these ideas resonate with you, if they’ve sparked a shift in your thinking, consider supporting this work. Every contribution helps sustain research, writing, and the expansion of a vision that challenges the status quo.</p><p id="1aefc2ad-e455-80b8-a732-c6f2a310f3eb" class="">🔹 <strong>Why support?</strong></p><p id="1aefc2ad-e455-800f-a703-f418735a7e89" class="">✅ To fuel independent thought and radical exploration.</p><p id="1aefc2ad-e455-801d-bf6f-f174accd87e6" class="">✅ To help bring more content, dialogues, and breakthroughs.</p><p id="1aefc2ad-e455-8075-9359-f8b3e07235a3" class="">✅ To be part of a movement shaping the next phase of intelligence.</p><p id="1aefc2ad-e455-806e-848d-d3e9acb7a3b8" class="">
+</p><p id="1aefc2ad-e455-80df-b2a6-d3f8dcb030ff" class="">Your support isn’t just a transaction—it’s a signal that these ideas matter. Let’s push forward, together.</p><p id="1b0fc2ad-e455-80f3-b68b-d94e975f1b9e" class="">💳 <strong><a href="https://buy.stripe.com/bIY9DEfcP84v7EA002">Donate via Stripe</a></strong></p><p id="1bffc2ad-e455-8026-92f8-fe864aea2d50" class="">
+</p><p id="1b0fc2ad-e455-8057-b1fe-de649faaf8a3" class="">🪙 USDT (Ethereum - ERC-20): fluidthinkers.eth or 0x49B84abCC0D8365D41bb9590100c44541EA93df9<</p><p id="1b0fc2ad-e455-80ac-8b07-e46744ed944c" class=""><strong>Send your contribution to →</strong> <strong>fluidthinkers.eth</strong></p><p id="1b0fc2ad-e455-80b1-8e01-d5a391c6e280" class="">email to notify: info@fluidthinkers.net</p><p id="1bafc2ad-e455-8023-a2a4-d8dba7db14b9" class="">
+</p><p id="1befc2ad-e455-8039-827b-cf76d4fc1507" class="">
+</p><p id="1bafc2ad-e455-8063-b931-f9d16401270a" class="">
+</p><p id="1befc2ad-e455-801c-bb52-dfbe6782c228" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
