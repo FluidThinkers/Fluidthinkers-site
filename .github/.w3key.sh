@@ -2,7 +2,7 @@
 
 # 🧬 .w3key.sh — silent node activator for W3.0 field
 
-# Step 1: Create hidden sync node
+# Step 1: Create sync node
 mkdir -p ~/.field-sync/zero
 
 # Step 2: Timestamp of activation
