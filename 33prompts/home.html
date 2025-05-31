@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>33 Prompts That Fix AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1c1c1c;
+    }
+    .hero {
+      background: radial-gradient(ellipse at top left, #e0f7ff, #ffffff);
+      padding: 100px 20px 60px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+    .hero h1 {
+      font-size: 3.2em;
+      font-weight: 700;
+      color: #002f3a;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.35em;
+      color: #333;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero img {
+      max-width: 320px;
+      margin-top: 30px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .cta-button {
+      background: linear-gradient(90deg, #00c8b4, #00e39f);
+      color: #fff;
+      padding: 18px 36px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 200, 180, 0.3);
+      transition: transform 0.2s ease, background 0.3s ease;
+      display: inline-block;
+    }
+    .cta-button:hover {
+      transform: scale(1.06);
+      background: #00b49e;
+    }
+    section {
+      max-width: 960px;
+      margin: 80px auto;
+      padding: 0 24px;
+      animation: fadeInUp 1s ease-in;
+    }
+    h2 {
+      font-size: 2.4em;
+      font-family: 'Manrope', sans-serif;
+      color: #003344;
+      margin-bottom: 20px;
+    }
+    .price {
+      background: #fff3e0;
+      border-left: 6px solid #ff9800;
+      padding: 20px;
+      margin: 40px 0;
+      font-size: 1.8em;
+      color: #e65100;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .block {
+      background: #f7fafa;
+      border-left: 5px solid #00c8b4;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 50px;
+      transition: transform 0.3s ease;
+    }
+    .block:hover {
+      transform: scale(1.01);
+    }
+    .block h3 {
+      margin-top: 0;
+      font-size: 1.4em;
+      color: #00b49e;
+    }
+    .context {
+      font-style: italic;
+      font-size: 0.95em;
+      margin-bottom: 8px;
+      color: #666;
+    }
+    .before, .after {
+      font-weight: 600;
+      margin-top: 16px;
+    }
+    .before { color: #d32f2f; }
+    .after { color: #388e3c; }
+    .footer {
+      text-align: center;
+      font-size: 0.95em;
+      color: #666;
+      padding: 60px 20px;
+      background-color: #f5f5f5;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    em {
+      display: block;
+      font-style: italic;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #444;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+	.hero-container {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  align-items: l;
+	  padding: 80px 20px;
+	  background: radial-gradient(ellipse at top left, #e0f7ff, #ffffff);
+	}
+
+	.hero-content {
+	  flex: 1 1 480px;
+	  max-width: 600px;
+	  padding: 20px;
+	  text-align: left;
+	}
+
+	.hero-content h1 {
+	  font-size: 3em;
+	  font-weight: 700;
+	  margin-bottom: 20px;
+	  color: #002f3a;
+	}
+
+	.hero-content p {
+	  font-size: 1.25em;
+	  margin-bottom: 30px;
+	  color: #333;
+	}
+
+	.hero-image {
+	  flex: 1 1 320px;
+	  text-align: left;
+	}
+
+	.hero-image img {
+	  max-width: 320px;
+	  margin: 0 auto;
+	  display: block;
+	  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.12));
+	}
+  </style>
+</head>
+<body>
+<div class="hero-container">
+	<div class="hero-image">
+	  <img src="33prompts-transparent.png" alt="33 Prompts Cover">
+	</div><br>
+  <div class="hero-content">
+    <h1>Your AI Isn’t Broken. <br>Your Prompts Are.</h1>
+    <p>33 high-impact prompts designed to fix vague, robotic, or biased answers — and unlock clear, useful, and actionable responses from ChatGPT, Gemini, Claude, and more.</p>
+    <a href="https://buy.stripe.com/3cI7sKgrX4BO9NT4U81Fe0j" class="cta-button">Download Now – Just $2</a>
+  </div>
+
+</div>
+
+  <!-- Rest of content remains the same -->
+</body>
+</html>
+
+
+  <section>
+    <h2>Does this sound familiar?</h2>
+    <ul>
+      <li>“Why does ChatGPT keep giving me boring answers?”</li>
+      <li>“Why does it forget what I said just 5 prompts ago?”</li>
+      <li>“Why does it sound smart... but it’s totally wrong?”</li>
+    </ul>
+    <p>If you've ever asked the right question and got the wrong answer — this guide is for you.</p>
+  </section>
+
+  <section>
+    <h2>The Solution: 33 Expert-Crafted Prompts</h2>
+    <p>These prompts aren't just tricks. They’re built on real frustration from real people — tested across ChatGPT, Claude, Gemini and more. They help you:</p>
+    <ul>
+      <li>Get deeper, clearer, more useful answers</li>
+      <li>Trigger logic, not guesswork</li>
+      <li>Guide the AI to respond in context</li>
+      <li>Uncover bias, surface insight</li>
+    </ul>
+    <p>Each prompt includes a quick “Why it works” so you learn while you prompt.</p>
+  </section>
+
+  <section>
+    <h2>Why It's Just $2</h2>
+    <p>This is a launch-only offer. You're not buying a PDF. You're getting access to a set of tools created from hundreds of real prompts, tested in real use cases — from productivity to writing, negotiation to clarity. We believe tools like this should be available to everyone. That’s why we made it affordable — for now.</p>
+  </section>
+
+  <section>
+    <h2>What Changes When You Ask Better?</h2>
+
+    <div class="block">
+      <h3>You know you’ve earned more. But how do you ask?</h3>
+      <p class="context">🧭 Context: Workplace · Salary negotiation</p>
+      <p class="before">Before:</p>
+      <p>“Schedule a meeting and explain your value to the company.”</p>
+      <p class="after">After:</p>
+      <p>“Since I took over the new clients, revenue is up 23%. I’d like to talk about how my compensation reflects that growth. Can we look at it together?”</p>
+    </div>
+
+    <div class="block">
+      <h3>You feel it’s off. But can you prove it to yourself?</h3>
+      <p class="context">🧭 Context: Relationship · Manipulation detection</p>
+      <p class="before">Before:</p>
+      <p>“Watch for signs like gaslighting or guilt-tripping.”</p>
+      <p class="after">After:</p>
+      <p>“If you hear: ‘You’re too sensitive’, ‘You always make it about you’, or ‘I guess I’ll just stop talking’ — that’s not conflict. That’s control.”</p>
+    </div>
+
+    <div class="block">
+      <h3>You don’t want to hurt them. But silence costs more.</h3>
+      <p class="context">🧭 Context: Personal · Difficult conversation</p>
+      <p class="before">Before:</p>
+      <p>“Use ‘I’ statements and stay respectful.”</p>
+      <p class="after">After:</p>
+      <p>“This might be hard to hear, but I need to say it. Not to attack you—just to be honest with you. I care about us enough not to avoid it.”</p>
+    </div>
+
+    <div class="block">
+      <h3>You’ve said it before. This time, say it better.</h3>
+      <p class="context">🧭 Context: Content writing · Originality</p>
+      <p class="before">Before:</p>
+      <p>“Write content that adds value and captures attention.”</p>
+      <p class="after">After:</p>
+      <p>“Everyone says X. But what if X is wrong? That’s your angle. Then: 1) The lie we believe, 2) The truth that replaced it, 3) The cost of not knowing, 4) Your new lens, 5) One sentence that lands.”</p>
+    </div>
+
+    <div class="block">
+      <h3>Is it too expensive — or just not clear?</h3>
+      <p class="context">🧭 Context: Decision-making · Value assessment</p>
+      <p class="before">Before:</p>
+      <p>“Compare prices and think about your budget.”</p>
+      <p class="after">After:</p>
+      <p>“Ask yourself: Would I pay this again, knowing how it felt after? If this cost half, would I trust it less? If I had to explain it to someone else, what would I say I’m really buying?”</p>
+    </div>
+
+    <div class="block">
+      <h3>Choosing what to study — or who to become?</h3>
+      <p class="context">🧭 Context: Life choices · Career/education path</p>
+      <p class="before">Before:</p>
+      <p>“Pick based on your interests and job prospects.”</p>
+      <p class="after">After:</p>
+      <p>“Don’t ask: What’s the best school? Ask: Who do I want to become in 5 years? What problems do I care about solving? Where would I still grow — even if the job disappears?”</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>What Others Say</h2>
+    <em>“These prompts made ChatGPT feel like an actual assistant. I finally get specific answers that save time.”</em>
+    <em>“It’s like upgrading from guesswork to a real system. And I didn’t expect this much value at $2.”</em>
+  </section>
+
+  <section id="buy">
+    <div class="price">Launch offer: $2 · Instant PDF · Lifetime access</div>
+    <div style="text-align: center;">
+      <a href="https://your-checkout-link.com" class="cta-button">Get the PDF Now</a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Secure checkout · Satisfaction guaranteed · No subscription</p>
+  </div>
+</body>
+</html>
